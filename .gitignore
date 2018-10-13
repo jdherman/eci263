@@ -1,0 +1,6 @@
+animations/
+image-match/
+nfl/
+old/
+*.pyc
+.DS_Store
