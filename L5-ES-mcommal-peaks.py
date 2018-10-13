@@ -36,7 +36,7 @@ for seed in range(num_seeds):
   nfe = 0
   f_best, x_best = None, None
 
-  while nfe < max_NFE:
+  while nfe + l <= max_NFE:
 
     # evaluate all solutions in the population
     for i,x in enumerate(P):
@@ -54,8 +54,8 @@ for seed in range(num_seeds):
 
     # then mutate: each parent generates l/m children (integer division)
     child = 0
-    for i,x in enumerate(Q):
-      for j in range(int(l/m)):
+    for x in Q:
+      for _ in range(int(l/m)):
         P[child,:] = mutate(x, lb, ub, s) # new population members
         child += 1
 
