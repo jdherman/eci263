@@ -44,7 +44,7 @@ def cx_and_mut(P1,P2,pc,pm):
   if np.random.rand() < pc:
     x = np.random.randint(d)
     child1[x:] = P2[x:]
-    child2[:x] = P1[:x]
+    child2[x:] = P1[x:]
 
   # bit-flip mutation
   for c in child1,child2:
